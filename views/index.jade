@@ -1,0 +1,198 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        <meta name="viewport" content="width=device-width,user-scalble=no"/>
+        <meta name="x5-orientation" content="portrait"/>
+        <meta name="x5-fullscreen" content="true"/>
+        <meta name="full-screen" content="yes"/>
+        <meta name="format-detection" content="telephone=yes, email=no"/>
+
+        title 前端简历
+        link(rel="stylesheet", href="stylesheets/index.css")
+    body
+        header 
+            nav 
+                .container 
+                    .left
+                        img(src="./images/h5_icon.png", alt="") 
+                        |前端工程师
+                    div.nav-btns
+                    ul.menu
+                        li 
+                            a(href="###") 基本资料                                                               
+                        li
+                            a(href="###") 项目经验
+                        li 
+                            a(href="###") 专业技能
+                        li 
+                            a(href="###") 工作经历
+                        li 
+                            a(href="###") 自我评价
+                        li 
+                            a(href="###") 联系方式
+            .title
+                .title-cont
+                    h1 简历
+                        span -前端工程师
+                    p 喜欢技术，热爱挑战
+                    a.down(href="###")
+                        i
+        section
+            .basic-info
+                .title
+                    h2 基本<strong>资料</strong>
+                    hr
+                ul.info-list
+                    li
+                        .box
+                            .logo
+                                img(src="../images/com.png")
+                            h4 个人信息
+                            p 
+                                |英文名: #{user.ename}  性别：#{user.genter}
+                            p
+                                |年龄: #{user.age}岁 籍贯：#{user.home}
+                    li
+                        .box
+                            .zy.logo 
+                                img(src="../images/html.png")
+                            h4 专业学历
+                            p 
+                                |专业：#{user.major}
+                            p
+                                |学历：#{user.education}
+                    li
+                        .box
+                            .school.logo
+                                img(src="../images/school.png")
+                            h4 毕业学校
+                            p 
+                                |毕业学校：#{user.school}
+                            p
+                                |学习技能：#{user.skill}
+                    li      
+                        .box
+                            .phonescon.logo
+                                img(src="../images/phone.png")
+                            h4 联系方式
+                            p 
+                                |QQ：#{user.qq}
+                            p
+                                |邮箱：#{user.email}      
+            .project 
+                .title
+                    h2 项目<strong>经验</strong>
+                    hr
+                p #{describe}
+                ul.title-list
+                    li 
+                        a(href="###") 所有
+                    li 
+                        a(href="###") PC端
+                    li 
+                        a(href="###") 移动端
+                    li 
+                        a(href="###") 响应式
+              
+                ul.show-box
+                    -each item in web
+                        li 
+                            div.mon-info
+                                p.webname #{item.webname}
+                                p.technology #{item.technology}
+                                p.url #{item.url}
+                            img(src="#{item.fileimg}", alt="")
+                   
+            .skill
+                .title
+                    h2 专业<strong>技能</strong>
+                    hr
+                .cont
+                    img(src="./images/about.png", alt="")
+                    .right
+                        h4 <i></i>PC端
+                        p #{user.skilldescribe}
+
+            .achievement
+                ul
+                    li
+                        img(src="../images/age.png", alt="")
+                        p.count #{user.age}
+                        p AGE YEARS
+                    li
+                        img(src="../images/html_01.png", alt="")
+                        p.count #{user.code}
+                        p CODE AMOUNT
+                    li
+                        img(src="../images/timer.png", alt="")
+                        p.count #{user.worktime}
+                        p WORK HOUR
+                    li
+                        img(src="../images/trophy.png", alt="")
+                        p.count #{user.money}
+                        p PROJECTS AMOUNT
+            .history
+                .title
+                    h2 人生<strong>经历</strong>
+                    hr
+                p #{saying}
+                 ul.info-list
+                    -each item in exp
+                        li
+                            .box
+                                .logo
+                                    img(src="#{item.bgimg}")
+                                h4 #{item.company}
+                                p #{item.position}
+                                .cont #{item.zzms}  
+            .evaluate
+                .title
+                    h2 自我<strong>评价</strong>
+                    hr
+                .intr-box
+                    ul
+                        li #{user.introduce1}
+                        li #{user.introduce2}
+                        li #{user.introduce3}
+                ul.btns
+                    li.active
+                    li
+                    li
+            .phone
+                .title
+                    h2 联系<strong>方式</strong>
+                    hr
+                ul.info
+                    li
+                        i.address
+                        p #{user.address}
+                    li
+                        i.email
+                        p #{user.email}
+                    li
+                        i.qq
+                        p #{user.qq}
+                h4 给我发邮件
+                .send-email
+                    input#name(type="text",name="name",placeholder="姓名")
+                    input#email(type="email",name="email",placeholder="邮箱")
+                    textarea#content(name="context", cols="30", rows="10", placeholder="内容")
+                    input(type="button",value="确认发送 ",id="sub-btn")
+        .mon 
+            .mon-content
+                h3 提示
+                div.prompt 内容
+                button.close 关闭
+        footer 
+            .container
+                p Copyright © 2016 作者：Baron. 前端工程师 
+                    a.count(href="###") 站长统计 
+                    a.blog(href="###") 个人博客
+                ul
+                    li
+                    li
+                    li
+                    li
+        script(src="/javascripts/jquery-3.2.1.min.js")
+        script(src="/javascripts/index.js")

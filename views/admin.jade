@@ -1,0 +1,259 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title 后台管理
+        link(rel="stylesheet", href="stylesheets/admin.css")
+    body 
+        header 
+            nav 
+                .container 
+                    a.left(href="/index")
+                        img(src="./images/h5_icon.png", alt="") 
+                        |前端工程师
+                    a.logout(href="/logout")
+                        i.logout-icon
+                        |注销
+        aside.left-menu
+            h3 #{username.username},欢迎回来。
+            ul.menu-list
+                li
+                    span
+                        i.basic-info
+                        |基本资料
+                        span.top
+                    ul.info    
+                        li.data    
+                            a(href="###") 个人信息
+                        li.data    
+                            a(href="###") 专业学历
+                        li.data    
+                            a(href="###") 毕业学校
+                        li.data    
+                            a(href="###") 联系方式    
+                li.data
+                    span   
+                        i.skill
+                        |专业技能
+                li.data
+                    span  
+                        i.achievement
+                        |个人成就
+                li.data
+                    span 
+                        i.evaluate
+                        |自我评价
+                li.data-jy
+                    span 
+                        i.project
+                        |项目经验  
+                li.data-jl
+                    span   
+                        i.experience
+                        |人生经历
+                li.data-email
+                    span 
+                        i.email
+                        |邮箱列表
+                li.data-admin
+                    span  
+                        i.admin
+                        |用户管理
+        section
+            form.basic-info-box(action="/update",method="post",enctype="multipart/form-data")
+                .info-box
+                    .input-title 个人信息
+                    .input-info
+                        span 英文名
+                        input(type="text",name="ename",value="#{user.ename}")
+                    .input-info
+                        span 性  别
+                        input(type="text",name="genter",value="#{user.genter}")
+                    .input-info 
+                        span 年 龄
+                        input(type="text",name="age",value="#{user.age}")
+                    .input-info 
+                        span 籍 贯
+                        input(type="text",name="home",value="#{user.home}")
+                .info-box   
+                    .input-title 专业学历
+                    .input-info 
+                        span 专 业
+                        input(type="text",name="major",value="#{user.major}")
+                    .input-info 
+                        span 学 历
+                        input(type="text",name="education",value="#{user.education}")
+                .info-box
+                    .input-title 毕业学校
+                    .input-info 
+                        span 毕业学校
+                        input(type="text",name="school",value="#{user.school}")
+                    .input-info 
+                        span 学习技能
+                        input(type="text",name="skill",value="#{user.skill}")
+                .info-box                
+                    .input-title 联系方式
+                    .input-info 
+                        span 地址
+                        input(type="text",name="address",value="#{user.address}")
+                    .input-info 
+                        span Q Q
+                        input(type="text",name="qq",value="#{user.qq}")
+                    .input-info 
+                        span 邮箱
+                        input(type="text",name="email",value="#{user.email}")     
+                .info-box
+                    .input-title 专业技能
+                    .input-info.textarea
+                        span 技能描述
+                        textarea(name="skilldescribe") #{user.skilldescribe} 
+                .info-box
+                    .input-title 个人成就
+                    .input-info 
+                        span 代码量
+                        input(type="text",name="code",value="#{user.code}")
+                    .input-info 
+                        span 工作时间
+                        input(type="text",name="worktime",value="#{user.worktime}")
+                    .input-info 
+                        span 项目金额
+                        input(type="text",name="money",value="#{user.money}")     
+                .info-box
+                    .input-title 自我介绍
+                    .input-info 
+                        span 自我介绍1
+                        input(type="text",name="introduce1",value="#{user.introduce1}")
+                    .input-info 
+                        span 自我介绍2
+                        input(type="text",name="introduce2",value="#{user.introduce2}")
+                    .input-info 
+                        span 自我介绍3
+                        input(type="text",name="introduce3",value="#{user.introduce3}")
+                        .info-box
+                .btn-box
+                    .update 修改
+                    button.sub(type="submit",disabled) 保存
+            form.basic-info-box(action="/upweb",method="post",enctype="multipart/form-data")
+                .info-box
+                    .input-title 项目经验
+                    .input-info 
+                        span 总体描述
+                        input(type="text",name="describe",value="#{user.describe}")
+                    .addbtn 添加
+                    table.table-list(id="webobj",cellpadding=0,cellspacing=0)
+                        tr
+                            th 网站名称
+                            th 网址
+                            th 图片
+                            th 描述
+                            th 类型
+                            th 操作
+                        -each item in web
+                            tr(liid="#{item._id}")
+                                td #{item.webname}
+                                td #{item.url}
+                                td 
+                                    img(src="#{item.fileimg}")
+                                td #{item.technology}
+                                td #{item.type}
+                                td 
+                                    .modify(href="###") 修改
+                                    .del(href="###") 删除
+                    .info-list
+                        .input-info 
+                            span 网站名称
+                            input(type="text",name="webname",value="")
+                        .input-info 
+                            span 网站地址
+                            input(type="text",name="url",value="")
+                        .input-info 
+                            span 技术
+                            input(type="text",name="technology",value="")
+                        .input-info 
+                            span 类型
+                            select(name="type",value="")
+                                option  PC端
+                                option  移动端
+                                option  响应式
+                        .input-info 
+                            span 上传封面
+                            input.file(type="file",name="fileimg",value="")
+                        .btn-box
+                            button.sub(type="submit",disabled) 保存
+                            .closebtn 取消
+            form.basic-info-box(action="/upexperience",method="post",enctype="multipart/form-data")                
+                .info-box
+                    .input-title 人生经历
+                    .input-info 
+                        span 个人语录
+                        input(type="text",name="saying",value="#{user.saying}")
+                    .addbtn 添加
+                    table.table-list(id="exprience",cellpadding=0,cellspacing=0)
+                        tr
+                            th 公司名称
+                            th 岗位
+                            th 图片
+                            th 职责描述
+                            th 操作
+                        -each item in exp
+                            tr(liid="#{item._id}")
+                                td #{item.company}
+                                td #{item.position}
+                                td 
+                                    img(src="#{item.bgimg}")
+                                td #{item.zzms}
+                                td 
+                                    .modify(href="###") 修改
+                                    .del(href="###") 删除
+                    .info-list  
+                        .input-info 
+                            span 封面图片
+                            input.file(type="file",name="bgimg",value="")
+                        .input-info 
+                            span 公 司：
+                            input(type="text",name="company",value="")
+                        .input-info 
+                            span 岗 位：
+                            input(type="text",name="position",value="")
+                        .input-info.textarea
+                            span 职责描述
+                            textarea(name="zzms")   
+                        .btn-box
+                            button.sub(type="submit",disabled) 保存
+                            .closebtn 取消
+            form.basic-info-box(action="/email",method="post",enctype="multipart/form-data")                                                    
+                .info-box
+                    .input-title 邮箱列表
+                    table.table-list(id="emails",cellpadding=0,cellspacing=0)
+                        tr
+                            th 姓名
+                            th 邮箱
+                            th 内容
+                            th 添加日期
+                            th 操作
+                        -each item in ems
+                            tr(liid="#{item._id}")
+                                td #{item.nickname}
+                                td #{item.useremail}
+                                td #{item.content}
+                                td #{item.addTime}
+                                td 
+                                    .del(href="###") 删除
+            form.basic-info-box(action="/adminUpdate",method="post",enctype="multipart/form-data")                            
+                .info-box
+                    .input-title 用户管理
+                    .input-info 
+                        span 用户名
+                        input.adminuser(type="text",name="username")
+                    .input-info 
+                        span 密 码
+                        input.pwd1(type="password",name="password")
+                    .input-info 
+                        span 再次输入
+                        input.pwd2(type="password",name="password1")
+                        .info-box
+                .btn-box
+                    .update 修改
+                    button#adminsub.sub(type="submit",disabled) 保存
+        script(src="/javascripts/jquery-3.2.1.min.js")
+        script(src="/javascripts/admin.js")

@@ -1,0 +1,336 @@
+@charset "UTF-8";
+a,
+input,
+button {
+  /*清除点击阴影*/
+  -webkit-tap-highlight-color: transparent;
+  border: none; }
+
+input,
+button {
+  /*清除按钮的圆角*/
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+body {
+  /*选中文字设置*/
+  margin: 0;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; }
+
+body * {
+  /*文字设置*/
+  -webkit-user-select: none;
+  font-family: Helvetica; }
+
+h2,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0; }
+
+ul,
+li {
+  list-style: none; }
+
+html {
+  overflow: hidden; }
+
+header {
+  width: 100%;
+  height: 57px; }
+
+nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  transition: all 1s; }
+  nav .container {
+    padding: 0 50px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box; }
+    @media only screen and (max-width: 1200px) {
+      nav .container {
+        width: 970px;
+        padding: 0 15px; } }
+    @media only screen and (max-width: 992px) {
+      nav .container {
+        width: 750px;
+        padding: 0 15px; } }
+    @media only screen and (max-width: 768px) {
+      nav .container {
+        width: 100%;
+        padding: 0 15px; } }
+  nav .message {
+    display: inline-block;
+    color: #fff;
+    margin-left: 100px;
+    position: relative;
+    text-decoration: none; }
+    nav .message i {
+      display: inline-block;
+      background: url("../images/email-icon.png") no-repeat;
+      width: 28px;
+      height: 28px;
+      background-size: 100%;
+      vertical-align: middle;
+      margin-right: 5px; }
+    nav .message span {
+      position: absolute;
+      right: -13px;
+      top: -6px;
+      border-radius: 4px 4px 4px 4px;
+      background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #c71821), color-stop(1, #f54747));
+      border: 1px solid #751616;
+      color: #FFFFFF;
+      padding: 2px 3px;
+      font-size: 12px;
+      line-height: 12px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 1px 1px rgba(0, 0, 0, 0.2); }
+  nav .logout {
+    display: block;
+    float: right;
+    color: #fff;
+    line-height: 57px;
+    font-weight: bold;
+    text-decoration: none; }
+    nav .logout i {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url("../images/logout.png") no-repeat;
+      background-size: 100%;
+      vertical-align: middle;
+      margin-right: 5px; }
+  nav .left {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px; }
+    nav .left img {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      vertical-align: middle; }
+  nav .nav-btns {
+    display: none;
+    background: url("../images/menu.png") no-repeat;
+    width: 34px;
+    height: 26px;
+    background-size: 100%;
+    line-height: 57px;
+    margin-top: 15px;
+    float: right; }
+    @media only screen and (max-width: 992px) {
+      nav .nav-btns {
+        display: block; } }
+
+.left-menu {
+  padding: 40px 0 100px 0;
+  box-sizing: border-box;
+  width: 20%;
+  height: 100%;
+  float: left;
+  background: #292A2F;
+  overflow-y: scroll; }
+  .left-menu h3 {
+    color: #fff;
+    text-align: center;
+    margin-top: 0; }
+  .left-menu .menu-list li {
+    border-top: 1px dotted #555;
+    color: #fff;
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; }
+    .left-menu .menu-list li > span {
+      display: block;
+      margin-bottom: 20px;
+      cursor: pointer; }
+    .left-menu .menu-list li .top {
+      display: block;
+      float: right;
+      width: 18px;
+      height: 18px;
+      background: url("../images/right.png") no-repeat;
+      background-size: 100%;
+      margin-right: 20px; }
+    .left-menu .menu-list li i {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+      margin-right: 20px; }
+    .left-menu .menu-list li .info {
+      background: #3D3E43;
+      height: 0;
+      transition: height 1s; }
+      .left-menu .menu-list li .info li {
+        border: none;
+        padding: 10px 0; }
+        .left-menu .menu-list li .info li a {
+          color: #fff;
+          font-size: 14px;
+          text-decoration: none; }
+    .left-menu .menu-list li .basic-info {
+      background: url("../images/admin_basic_info.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .project {
+      background: url("../images/admin_project.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .skill {
+      background: url("../images/admin_skill.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .achievement {
+      background: url("../images/admin_achievement.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .experience {
+      background: url("../images/admin_my_experience.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .evaluate {
+      background: url("../images/admin_my_evaluate.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .email {
+      background: url("../images/admin_email.png") no-repeat;
+      background-size: 100%; }
+    .left-menu .menu-list li .admin {
+      background: url("../images/admin.png") no-repeat;
+      background-size: 100%; }
+  .left-menu .menu-list .active {
+    background: #337ab7; }
+
+section {
+  background: #DDDDDD;
+  height: 93%;
+  width: 80%;
+  float: left;
+  box-sizing: border-box;
+  overflow-y: scroll; }
+  section .input-info {
+    width: 50%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    line-height: 34px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    border: 1px solid #ccc;
+    margin-bottom: 10px; }
+    section .input-info span {
+      display: inline-block;
+      border-right: 1px solid #ccc;
+      height: 100%;
+      width: 15%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 16px; }
+    section .input-info input, section .input-info select, section .input-info textarea {
+      width: 85%;
+      float: right;
+      height: 34px;
+      border-radius: 0 5px 5px 0;
+      outline: none;
+      box-sizing: border-box;
+      padding-left: 20px; }
+    section .input-info select {
+      border: none; }
+    section .input-info option {
+      font-size: 20px; }
+    section .input-info .file {
+      line-height: 37px; }
+  section .textarea {
+    line-height: 120px; }
+    section .textarea textarea {
+      padding: 10px;
+      height: 120px; }
+  section .input-title {
+    width: 60%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #337ab7;
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 80px;
+    box-sizing: border-box; }
+  section .basic-info-box {
+    overflow: hidden;
+    box-sizing: border-box;
+    display: none; }
+    section .basic-info-box .modify {
+      margin-right: 20px; }
+    section .basic-info-box .modify, section .basic-info-box .del {
+      display: inline-block;
+      cursor: pointer;
+      color: blue; }
+    section .basic-info-box .info-list {
+      display: none;
+      position: fixed;
+      width: 60%;
+      top: 157px;
+      bottom: 100px;
+      right: 150px;
+      padding: 50px;
+      text-align: center;
+      background: #fff; }
+    section .basic-info-box .addbtn {
+      width: 150px;
+      background: #fff;
+      height: 30px;
+      margin: 0 auto;
+      line-height: 30px;
+      text-align: center;
+      color: #000;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 1px 1px 1px;
+      margin-bottom: 20px; }
+    section .basic-info-box .table-list {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center; }
+      section .basic-info-box .table-list tr {
+        background: #ccc; }
+      section .basic-info-box .table-list th, section .basic-info-box .table-list td {
+        border: 1px solid #fff;
+        padding: 8px 0; }
+        section .basic-info-box .table-list th img, section .basic-info-box .table-list td img {
+          width: 200px; }
+    section .basic-info-box .btn-box {
+      text-align: center;
+      width: 100%;
+      padding-top: 50px; }
+      section .basic-info-box .btn-box .update, section .basic-info-box .btn-box .sub, section .basic-info-box .btn-box .closebtn {
+        color: #fff;
+        height: 40px;
+        width: 150px;
+        border-radius: 5px;
+        line-height: 40px;
+        text-align: center;
+        display: inline-block;
+        margin: 10px 5%;
+        outline: none;
+        cursor: pointer; }
+      section .basic-info-box .btn-box .update, section .basic-info-box .btn-box .closebtn {
+        background: #337ab7; }
+      section .basic-info-box .btn-box .sub {
+        background: #ccc; }
