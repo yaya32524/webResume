@@ -1,6 +1,4 @@
 # webResume
-This is web resume.
-git push -u origin master
 网页简历源码：
   <p>数据操作文件 ./routes/*
   <p>入口执行文件  ./bin/www
